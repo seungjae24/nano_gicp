@@ -43,8 +43,8 @@ include_directories(
 ## Build ##
 ###########
 ### NanoFLANN
-add_library(nanoflann STATIC src/nanoflann.cc)
+add_library(nanoflann src/nanoflann.cc)
 target_link_libraries(nanoflann ${PCL_LIBRARIES})
 ### NanoGICP
-add_library(nano_gicp STATIC src/nano_gicp.cc)
+add_library(nano_gicp src/nano_gicp.cc)
 target_link_libraries(nano_gicp ${PCL_LIBRARIES} ${EIGEN3_LIBS} ${OpenMP_LIBS} nanoflann)
