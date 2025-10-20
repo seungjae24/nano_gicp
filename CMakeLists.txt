@@ -49,3 +49,15 @@ target_link_libraries(nanoflann ${PCL_LIBRARIES})
 ### NanoGICP
 add_library(nano_gicp SHARED src/nano_gicp.cc)
 target_link_libraries(nano_gicp ${PCL_LIBRARIES} ${EIGEN3_LIBS} ${OpenMP_LIBS} nanoflann)
+
+# install library
+install(TARGETS 
+  nanoflann
+  nano_gicp
+  LIBRARY
+)
+
+# install headers
+install (DIRECTORY include/
+  DESTINATION include
+)
